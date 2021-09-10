@@ -15,13 +15,15 @@ class CreateTripsTable extends Migration
     {
         Schema::create('trips', function (Blueprint $table) {
             $table->id();
+
+            $table->string('trip_name', 40);
+            $table->string('trip_destination', 30);
+            $table->string('hotel_name', 30);
+            $table->tinyInteger('hotel_rating');
+            $table->tinyInteger('trip_duration_days');
+            $table->float('trip_price', 6, 2);
+
             $table->timestamps();
-            $table->string('trip_title',50);
-            $table->string('trip_destination',30);
-            $table->string('hotel_name',30);
-            $table->float('hotel_rating',1.1);
-            $table->string('nights', 2);
-            $table->integer('price');
         });
     }
 
